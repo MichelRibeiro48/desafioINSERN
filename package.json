@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-voice/voice": "^3.2.4",
     "@react-navigation/native": "^6.0.14",
+    "@react-navigation/native-stack": "^6.9.2",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-linear-gradient": "^2.6.2",
