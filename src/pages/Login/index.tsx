@@ -6,24 +6,34 @@ import Input from '../../components/Input';
 import styles from './styles';
 import DigitalIcon from 'react-native-vector-icons/Ionicons';
 import ModalFingerPrint from '../../components/ModalFingerPrint';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export default function Login() {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-  const navigation = useNavigation<NativeStackNavigationProp<any>>()
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
   return (
     <LinearGradient colors={['#0F0920', '#130931']} style={styles.container}>
-      <Image source={require('../../assets/logo.png')} style={{width: 200, height: 200, marginTop: 49}}/>
+      <Image source={require('../../assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Login</Text>
-      <Input placeholderName={'Usuário'} marginBottom={58} marginTop={38}/>
-      <Input placeholderName={'Senha'}/>
-      <Button marginTop={58} onPress={() => navigation.navigate('Home')}/>
-      <TouchableOpacity style={{marginTop: 30, flexDirection: 'row'}} onPress={() => setModalIsOpen(true)}>
-        <DigitalIcon name={'finger-print'} size={24} color={'white'}/>
-        <Text style={{color: 'white', fontWeight: '400', fontSize: 14, marginLeft: 8}}>Entrar com a digital</Text>
+      <Input placeholderName={'Usuário'} marginBottom={58} marginTop={38} />
+      <Input placeholderName={'Senha'} />
+      <Button
+        marginTop={58}
+        onPress={() => navigation.navigate('Home')}
+        textButton={'ENTRAR'}
+        backgroundColor="#0368FF"
+      />
+      <TouchableOpacity
+        style={styles.fingerPrintButton}
+        onPress={() => setModalIsOpen(true)}>
+        <DigitalIcon name={'finger-print'} size={24} color={'white'} />
+        <Text style={styles.fingerPrintText}>Entrar com a digital</Text>
       </TouchableOpacity>
-      <ModalFingerPrint visible={modalIsOpen} onClose={() => setModalIsOpen(false)}/>
+      <ModalFingerPrint
+        visible={modalIsOpen}
+        onClose={() => setModalIsOpen(false)}
+      />
     </LinearGradient>
   );
 }
