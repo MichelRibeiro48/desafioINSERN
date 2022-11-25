@@ -6,8 +6,11 @@ import CheckIcon from 'react-native-vector-icons/EvilIcons';
 import DropDownPicker from 'react-native-dropdown-picker';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export default function Home() {
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -44,7 +47,9 @@ export default function Home() {
         <Text style={styles.textDanger}>Nível de ameaça</Text>
         <Text style={styles.textLorem}>Lorem ipsum</Text>
       </View>
-      <TouchableOpacity style={styles.buttonCodes}>
+      <TouchableOpacity
+        style={styles.buttonCodes}
+        onPress={() => navigation.navigate('CodesPage')}>
         <MaterialIcon
           name={'cellphone-information'}
           size={28}
