@@ -4,11 +4,11 @@ import styles from './styles';
 
 type ButtonProps = {
   marginTop?: number,
-  onPress?: () => void,
+  onPress?: () => void;
 }
 export default function Button(props: ButtonProps) {
   return (
-    <TouchableOpacity style={[styles.container, {marginTop: props.marginTop}]} onPress={() => props.onPress}>
+    <TouchableOpacity style={[styles.container, {marginTop: props.marginTop}]} onPress={props.onPress}>
       <Text style={styles.text}>ENTRAR</Text>
     </TouchableOpacity>
   )
