@@ -5,8 +5,9 @@ import styles from './style';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import data from './mockData/mock';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 export default function CodesPage() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const [alertList, setAlertList] = useState('Emergency');
 
   return (
@@ -18,7 +19,7 @@ export default function CodesPage() {
           backgroundColor: '#221C3E',
           justifyContent: 'center',
         }}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <Icon
             name={'arrowleft'}
             size={48}
@@ -33,6 +34,8 @@ export default function CodesPage() {
           fontSize: 48,
           color: 'white',
           paddingHorizontal: 60,
+          marginBottom: 36,
+          marginTop: 30,
         }}>
         Lista de códigos
       </Text>
@@ -81,7 +84,7 @@ export default function CodesPage() {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={[styles.buttonAlerts, {backgroundColor: '#6FB15F'}]}>
+          style={[styles.buttonAlerts, {backgroundColor: '#6FB15F'}]} onPress={() => setAlertList('Routine')}>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
             Rotina
           </Text>
@@ -103,7 +106,7 @@ export default function CodesPage() {
             <TouchableOpacity
               style={[
                 styles.codesList,
-                item.idName === 'Alerts' && {backgroundColor: '#FFD15C'},
+                item.idName === 'Alerts' ? {backgroundColor: '#FFD15C'} : item.idName === 'Routine' && {backgroundColor: '#6FB15F'},
               ]}>
               <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
                 {item.cod}

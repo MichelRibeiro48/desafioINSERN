@@ -8,7 +8,7 @@ type ModalFingerPrintProps = {
 };
 export default function ModalFingerPrint(props: ModalFingerPrintProps) {
   return (
-    <Modal visible={props.visible} transparent={true}>
+    <Modal visible={props.visible} transparent={true} onRequestClose={props.onClose}>
       <TouchableOpacity
         onPress={props.onClose}
         style={styles.containerModalOpen}>

@@ -39,6 +39,26 @@ const data = [
     idName: 'Alerts',
     cod: 'A-105',
   },
+  {
+    idName: 'Routine',
+    cod: 'R-101',
+  },
+  {
+    idName: 'Routine',
+    cod: 'R-102',
+  },
+  {
+    idName: 'Routine',
+    cod: 'R-103',
+  },
+  {
+    idName: 'Routine',
+    cod: 'R-104',
+  },
+  {
+    idName: 'Routine',
+    cod: 'R-105',
+  },
 ];
 
 export default data;

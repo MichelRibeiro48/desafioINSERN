@@ -17,7 +17,7 @@ export default StyleSheet.create({
   },
   inputText: {
     color: 'white',
-    bottom: 5,
+    bottom: 10,
     marginLeft: 16,
   },
   textInputPlaceholder: {
