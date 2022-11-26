@@ -22,7 +22,7 @@ export default function Login() {
         marginTop={58}
         onPress={() => navigation.navigate('Home')}
         textButton={'ENTRAR'}
-        backgroundColor="#0368FF"
+        buttonHome={false}
       />
       <TouchableOpacity
         style={styles.fingerPrintButton}
