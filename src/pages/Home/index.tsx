@@ -62,6 +62,7 @@ export default function Home() {
           textButton="HISTÓRICO DE ENVIOS"
           buttonHome={true}
           marginTop={23}
+          onPress={() => navigation.navigate('HistoricPage')}
         />
         <Button
           textButton="ENVIAR FEEDBACK DO DIA"
