@@ -10,7 +10,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   textTrick: {
-    backgroundColor: '#0F0920',
+    backgroundColor: '#130931',
     height: 20,
     width: 45,
     marginLeft: 13,

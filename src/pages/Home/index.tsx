@@ -77,6 +77,7 @@ export default function Home() {
           width: '100%',
           height: 100,
           backgroundColor: '#221C3E',
+          top: 105,
         }}>
         <TouchableOpacity>
           <MaterialIcon
