@@ -13,14 +13,12 @@ import {RadioButton} from 'react-native-paper';
 import Button from '../Button';
 import DropDownPicker from 'react-native-dropdown-picker';
 import styles from './styles';
-import useKeyboard from '../KeyboardOpen';
 type ModalCodsProps = {
   visible: boolean;
   onClose: () => void;
   modalType: string;
 };
 export default function ModalCods(props: ModalCodsProps) {
-  const keyboardIsOpen = useKeyboard();
   const [radioButton, setRadioButton] = useState('');
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
@@ -73,7 +71,7 @@ export default function ModalCods(props: ModalCodsProps) {
             placeholderName={props.modalType === 'Add' ? 'Nome' : 'Novo Nome'}
             backgroundColorHolder="#221C3E"
             marginTop={25}
-            largeName={true}
+            largeName={props.modalType === 'Edit'}
           />
           <Input
             placeholderName={
@@ -81,7 +79,7 @@ export default function ModalCods(props: ModalCodsProps) {
             }
             backgroundColorHolder="#221C3E"
             marginTop={30}
-            largeName={true}
+            largeName={props.modalType === 'Edit'}
           />
           <View
             style={{
