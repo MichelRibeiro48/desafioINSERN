@@ -5,10 +5,12 @@ import styles from './style';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import data from './mockData/mock';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import ModalCods from '../../components/ModalCods';
 export default function CodesPage() {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const [alertList, setAlertList] = useState('Emergency');
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <LinearGradient colors={['#0F0920', '#130931']} style={styles.container}>
@@ -49,7 +51,8 @@ export default function CodesPage() {
             alignItems: 'center',
             justifyContent: 'center',
             marginRight: 9,
-          }}>
+          }}
+          onPress={() => setModalVisible(true)}>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
             Adicionar
           </Text>
@@ -84,7 +87,8 @@ export default function CodesPage() {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={[styles.buttonAlerts, {backgroundColor: '#6FB15F'}]} onPress={() => setAlertList('Routine')}>
+          style={[styles.buttonAlerts, {backgroundColor: '#6FB15F'}]}
+          onPress={() => setAlertList('Routine')}>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
             Rotina
           </Text>
@@ -106,7 +110,9 @@ export default function CodesPage() {
             <TouchableOpacity
               style={[
                 styles.codesList,
-                item.idName === 'Alerts' ? {backgroundColor: '#FFD15C'} : item.idName === 'Routine' && {backgroundColor: '#6FB15F'},
+                item.idName === 'Alerts'
+                  ? {backgroundColor: '#FFD15C'}
+                  : item.idName === 'Routine' && {backgroundColor: '#6FB15F'},
               ]}>
               <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
                 {item.cod}
@@ -114,6 +120,10 @@ export default function CodesPage() {
             </TouchableOpacity>
           )
         }
+      />
+      <ModalCods
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
       />
     </LinearGradient>
   );

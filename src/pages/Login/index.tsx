@@ -16,8 +16,13 @@ export default function Login() {
     <LinearGradient colors={['#0F0920', '#130931']} style={styles.container}>
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Login</Text>
-      <Input placeholderName={'Usuário'} marginBottom={58} marginTop={38} />
-      <Input placeholderName={'Senha'} />
+      <Input
+        placeholderName={'Usuário'}
+        marginBottom={58}
+        marginTop={38}
+        backgroundColorHolder="#130931"
+      />
+      <Input placeholderName={'Senha'} backgroundColorHolder="#130931" />
       <Button
         marginTop={58}
         onPress={() => navigation.navigate('Home')}

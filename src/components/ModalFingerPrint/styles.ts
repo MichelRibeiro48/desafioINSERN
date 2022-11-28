@@ -30,6 +30,7 @@ export default StyleSheet.create({
     fontWeight: '400',
     fontSize: 16,
     marginLeft: 8,
+    color: 'black',
   },
   passwordText: {
     marginTop: 40,
