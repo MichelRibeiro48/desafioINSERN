@@ -7,6 +7,7 @@ type InputProps = {
   placeholderName: string;
   marginBottom?: number;
   marginTop?: number;
+  largeName?: boolean;
 };
 export default function Input(props: InputProps) {
   return (
@@ -20,6 +21,7 @@ export default function Input(props: InputProps) {
           styles.textTrick,
           props.placeholderName === 'Senha' && {width: 40},
           {backgroundColor: props.backgroundColorHolder},
+          props.largeName && {width: 70},
         ]}>
         <Text style={styles.textInputPlaceholder}>{props.placeholderName}</Text>
       </View>

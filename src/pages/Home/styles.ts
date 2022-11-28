@@ -65,16 +65,16 @@ export default StyleSheet.create({
     fontSize: 96,
     top: -55,
   },
+  textCodes: {
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 28,
+  },
   dropDown: {
     borderWidth: 0,
     width: 100,
     alignSelf: 'flex-end',
     top: 9,
-  },
-  textCodes: {
-    color: 'white',
-    fontWeight: '700',
-    fontSize: 28,
   },
   selectedDropDown: {
     width: 100,

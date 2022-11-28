@@ -11,6 +11,7 @@ export default function CodesPage() {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const [alertList, setAlertList] = useState('Emergency');
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalType, setModalType] = useState('');
 
   return (
     <LinearGradient colors={['#0F0920', '#130931']} style={styles.container}>
@@ -52,7 +53,9 @@ export default function CodesPage() {
             justifyContent: 'center',
             marginRight: 9,
           }}
-          onPress={() => setModalVisible(true)}>
+          onPress={() => {
+            setModalVisible(true), setModalType('Add');
+          }}>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
             Adicionar
           </Text>
@@ -65,6 +68,9 @@ export default function CodesPage() {
             borderRadius: 4,
             alignItems: 'center',
             justifyContent: 'center',
+          }}
+          onPress={() => {
+            setModalVisible(true), setModalType('Edit');
           }}>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
             Editar
@@ -124,6 +130,7 @@ export default function CodesPage() {
       <ModalCods
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
+        modalType={modalType}
       />
     </LinearGradient>
   );
