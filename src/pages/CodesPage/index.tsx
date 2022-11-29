@@ -12,6 +12,7 @@ export default function CodesPage() {
   const [alertList, setAlertList] = useState('Emergency');
   const [modalVisible, setModalVisible] = useState(false);
   const [modalType, setModalType] = useState('');
+  console.log(data.find(o => o.cod === 'C-100'));
 
   return (
     <LinearGradient colors={['#0F0920', '#130931']} style={styles.container}>

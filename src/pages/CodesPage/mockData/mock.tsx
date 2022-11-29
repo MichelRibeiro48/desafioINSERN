@@ -21,7 +21,7 @@ const data = [
   },
   {
     idName: 'Alerts',
-    cod: 'A-101',
+    cod: 'a101',
   },
   {
     idName: 'Alerts',

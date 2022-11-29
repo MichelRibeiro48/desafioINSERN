@@ -15,6 +15,7 @@ function VoiceTest() {
   const [started, setStarted] = useState('');
   const [results, setResults] = useState([]);
   const [partialResults, setPartialResults] = useState([]);
+  const [deuCerto, setDeuCerto] = useState(false);
 
   useEffect(() => {
     Voice.onSpeechStart = onSpeechStart;
@@ -29,7 +30,14 @@ function VoiceTest() {
       Voice.destroy().then(Voice.removeAllListeners);
     };
   }, []);
-
+  useEffect(() => {
+    if (results[0] === 'a101') {
+      setDeuCerto(true);
+    } else {
+      setDeuCerto(false);
+    }
+  }, [results]);
+  console.log(deuCerto);
   const onSpeechStart = (e: any) => {
     console.log('onSpeechStart: ', e);
     setStarted('√');

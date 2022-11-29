@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import CodesPage from '../pages/CodesPage';
 import HistoricPage from '../pages/HistoricPage';
 import Icon from 'react-native-vector-icons/Entypo';
+import VoiceTest from '../components/VoiceRecorder';
 
 const Tab = createBottomTabNavigator();
 export default function TabRoutes() {
@@ -35,7 +36,7 @@ export default function TabRoutes() {
       />
       <Tab.Screen
         name="HistoricPage"
-        component={HistoricPage}
+        component={VoiceTest}
         options={{
           tabBarIcon: ({size, color}) => (
             <Icon name={'menu'} size={size} color={color} />
