@@ -1,63 +1,78 @@
 const data = [
   {
     idName: 'Emergency',
-    cod: 'C-101',
+    cod: 'c101',
+    codName: 'C-101',
   },
   {
     idName: 'Emergency',
-    cod: 'C-102',
+    cod: 'c102',
+    codName: 'C-102',
   },
   {
     idName: 'Emergency',
-    cod: 'C-103',
+    cod: 'c103',
+    codName: 'C-103',
   },
   {
     idName: 'Emergency',
-    cod: 'C-104',
+    cod: 'c104',
+    codName: 'C-104',
   },
   {
     idName: 'Emergency',
-    cod: 'C-105',
+    cod: 'c105',
+    codName: 'C-105',
   },
   {
     idName: 'Alerts',
     cod: 'a101',
+    codName: 'A-101',
   },
   {
     idName: 'Alerts',
-    cod: 'A-102',
+    cod: 'a102',
+    codName: 'A-102',
   },
   {
     idName: 'Alerts',
-    cod: 'A-103',
+    cod: 'a103',
+    codName: 'A-103',
   },
   {
     idName: 'Alerts',
-    cod: 'A-104',
+    cod: 'a104',
+    codName: 'A-104',
   },
   {
     idName: 'Alerts',
-    cod: 'A-105',
+    cod: 'a105',
+    codName: 'A-105',
   },
   {
     idName: 'Routine',
-    cod: 'R-101',
+    cod: 'r101',
+    codName: 'R-101',
   },
   {
     idName: 'Routine',
-    cod: 'R-102',
+    cod: 'r102',
+    codName: 'R-102',
   },
   {
     idName: 'Routine',
-    cod: 'R-103',
+    cod: 'r103',
+    codName: 'R-103',
   },
   {
     idName: 'Routine',
-    cod: 'R-104',
+    cod: 'r104',
+    codName: 'R-104',
   },
   {
     idName: 'Routine',
-    cod: 'R-105',
+    cod: 'r105',
+    codName: 'R-105',
   },
 ];
 

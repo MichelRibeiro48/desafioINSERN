@@ -16,13 +16,7 @@ export default function CodesPage() {
 
   return (
     <LinearGradient colors={['#0F0920', '#130931']} style={styles.container}>
-      <View
-        style={{
-          width: '100%',
-          height: 70,
-          backgroundColor: '#221C3E',
-          justifyContent: 'center',
-        }}>
+      <View style={styles.backContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <Icon
             name={'arrowleft'}
@@ -32,84 +26,41 @@ export default function CodesPage() {
           />
         </TouchableOpacity>
       </View>
-      <Text
-        style={{
-          fontWeight: '700',
-          fontSize: 48,
-          color: 'white',
-          paddingHorizontal: 60,
-          marginBottom: 36,
-          marginTop: 30,
-        }}>
-        Lista de códigos
-      </Text>
+      <Text style={styles.textTitle}>Lista de códigos</Text>
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
-          style={{
-            width: 123,
-            height: 41,
-            backgroundColor: '#0368FF',
-            borderRadius: 4,
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginRight: 9,
-          }}
+          style={styles.buttonAdd}
           onPress={() => {
             setModalVisible(true), setModalType('Add');
           }}>
-          <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
-            Adicionar
-          </Text>
+          <Text style={styles.textAlert}>Adicionar</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={{
-            width: 123,
-            height: 41,
-            backgroundColor: '#221C3E',
-            borderRadius: 4,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
+          style={styles.buttonEdit}
           onPress={() => {
             setModalVisible(true), setModalType('Edit');
           }}>
-          <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
-            Editar
-          </Text>
+          <Text style={styles.textAlert}>Editar</Text>
         </TouchableOpacity>
       </View>
       <View style={{flexDirection: 'row', marginTop: 37}}>
         <TouchableOpacity
           style={[styles.buttonAlerts, {backgroundColor: '#FF5757'}]}
           onPress={() => setAlertList('Emergency')}>
-          <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
-            Emer.
-          </Text>
+          <Text style={styles.textAlert}>Emer.</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.buttonAlerts, {backgroundColor: '#FFD15C', width: 84}]}
           onPress={() => setAlertList('Alerts')}>
-          <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
-            Alertas
-          </Text>
+          <Text style={styles.textAlert}>Alertas</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.buttonAlerts, {backgroundColor: '#6FB15F'}]}
           onPress={() => setAlertList('Routine')}>
-          <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
-            Rotina
-          </Text>
+          <Text style={styles.textAlert}>Rotina</Text>
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          width: 253,
-          height: 1,
-          backgroundColor: 'white',
-          marginTop: 17,
-          marginBottom: 16,
-        }}
-      />
+      <View style={styles.line} />
       <FlatList
         data={data}
         renderItem={({item}) =>
@@ -122,7 +73,7 @@ export default function CodesPage() {
                   : item.idName === 'Routine' && {backgroundColor: '#6FB15F'},
               ]}>
               <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>
-                {item.cod}
+                {item.codName}
               </Text>
             </TouchableOpacity>
           )

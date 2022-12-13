@@ -26,7 +26,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 16,
     padding: 8,
-    marginTop: 48,
+    marginTop: 28,
   },
   textSecurity: {
     color: '#F2F0FF',
@@ -85,5 +85,14 @@ export default StyleSheet.create({
   safetyContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  microfoneCircle: {
+    backgroundColor: '#423A64',
+    borderRadius: 100,
+    padding: 10,
+    marginTop: 8,
+    width: 71,
+    height: 70,
+    alignSelf: 'center',
   },
 });

@@ -36,7 +36,7 @@ export default function TabRoutes() {
       />
       <Tab.Screen
         name="HistoricPage"
-        component={VoiceTest}
+        component={HistoricPage}
         options={{
           tabBarIcon: ({size, color}) => (
             <Icon name={'menu'} size={size} color={color} />

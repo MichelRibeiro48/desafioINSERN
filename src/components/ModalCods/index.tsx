@@ -13,6 +13,7 @@ import {RadioButton} from 'react-native-paper';
 import Button from '../Button';
 import DropDownPicker from 'react-native-dropdown-picker';
 import styles from './styles';
+import data from '../../pages/CodesPage/mockData/mock';
 type ModalCodsProps = {
   visible: boolean;
   onClose: () => void;
@@ -133,7 +134,13 @@ export default function ModalCods(props: ModalCodsProps) {
             buttonHome={false}
             textButton={props.modalType === 'Add' ? 'ADICIONAR' : 'SALVAR'}
             marginTop={20}
-            onPress={props.onClose}
+            onPress={() => {
+              data.push({
+                idName: radioButton,
+                cod: 'c106',
+                codName: 'C-106',
+              });
+            }}
           />
         </View>
       </Pressable>
