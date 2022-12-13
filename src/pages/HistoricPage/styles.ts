@@ -41,4 +41,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
+  buttonEdit: {
+    width: 50,
+    height: 110,
+    backgroundColor: 'white',
+    marginTop: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+  },
 });

@@ -40,17 +40,7 @@ export default function HistoricPage() {
                 {item.description}
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                width: 50,
-                height: 110,
-                backgroundColor: 'white',
-                marginTop: 25,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderTopRightRadius: 20,
-                borderBottomRightRadius: 20,
-              }}>
+            <TouchableOpacity style={styles.buttonEdit}>
               <EditIcon name={'edit'} size={28} color={'black'} />
             </TouchableOpacity>
           </View>
